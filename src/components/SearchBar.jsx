@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './styles/searchBar.css'
 
 const SearchBar = ({ handleSearch }) => {
@@ -13,15 +15,11 @@ const SearchBar = ({ handleSearch }) => {
     handleSearch(searchQuery);
   }
 
-  const handleLocationClick = () => {
-    getWeatherByLocation(); 
-  }
-
   return (
     <div className="navbar">
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
+          type="text" 
           placeholder="Buscar ciudad o país"
           value={searchQuery}
           onChange={handleInputChange}
